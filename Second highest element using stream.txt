@@ -1,0 +1,22 @@
+Second highest element using streams
+
+import java.util.stream.Stream;
+import java.util.List;
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	
+	Integer[] arr= {10, 20, 4, 45, 99, 97};
+	
+	List <Integer> ls = Arrays.asList(arr);
+	
+	  Optional<Integer> answer = ls.stream()
+	               .sorted((a,b)->b-a)
+	               .skip(1)
+	               .findFirst() ;     
+	               
+	  System.out.println(answer.get());             
+	}
+}
